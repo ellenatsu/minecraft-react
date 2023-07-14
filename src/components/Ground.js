@@ -4,7 +4,7 @@ import { NearestFilter, RepeatWrapping } from "three";
 //defines a React-Three-Fiber component, utilizes the usePlane hook to create a ground plane in a 3D scene.
 export const Ground = () => {
   const [ref] = usePlane(() => ({
-    rotation: [-Math.PI / 4, 0, 0],
+    rotation: [-Math.PI / 2, 0, 0],
     position: [0, 0, 0],
   }));
 
