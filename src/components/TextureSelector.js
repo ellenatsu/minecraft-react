@@ -7,8 +7,8 @@ const images = {
   dirt: dirtImg,
   grass: grassImg,
   glass: glassImg,
-  log: logImg,
   wood: woodImg,
+  log: logImg,
 };
 export const TextureSelector = () => {
   const [visible, setVisible] = useState(false);
@@ -20,9 +20,10 @@ export const TextureSelector = () => {
   const { dirt, grass, glass, wood, log } = useKeyboard();
 
   useEffect(() => {
-    const textures = [dirt, grass, glass, wood, log];
+    const textures = { dirt, grass, glass, wood, log };
     const pressedTexture = Object.entries(textures).find(([k, v]) => v); //store the true texture
     if (pressedTexture) {
+      console.log("pressed: " + pressedTexture[0]);
       setTexture(pressedTexture[0]);
     }
   }, [setTexture, dirt, grass, glass, wood, log]);
@@ -40,7 +41,7 @@ export const TextureSelector = () => {
 
   return (
     visible && (
-      <div className="absolute centered texture-selector">
+      <div className="absolute centered texture-select">
         {Object.entries(images).map(([k, src]) => {
           return (
             <img

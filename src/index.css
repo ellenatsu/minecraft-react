@@ -54,10 +54,10 @@ body {
   color: white;
 }
 
-.texture-selector {
+.texture-select {
   transform: scale(8);
 }
 
-.texture-selector img.active {
+.texture-select img.active {
   border: 1px solid red;
 }
